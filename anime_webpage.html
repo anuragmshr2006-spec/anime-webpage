@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Anime List — PDF → HTML</title>
+   <link rel="stylesheet" href="pro 1 part2.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#0f172a;
+      --accent-2:#2563eb;
+      --radius:12px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#eef2ff 60%);
+      color:var(--accent);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+    }
+    .wrap{
+      max-width:960px;
+      margin:0 auto;
+    }
+    header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      margin-bottom:18px;
+    }
+    .logo{
+      width:76px;
+      height:76px;
+      border-radius:14px;
+      background:linear-gradient(135deg,var(--accent-2),#7c3aed);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      font-size:20px;
+      box-shadow:0 6px 18px rgba(15,23,42,0.12);
+    }
+    h1{margin:0;font-size:20px}
+    p.lead{margin:0;color:var(--muted);font-size:14px}
+    .controls{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    button{
+      background:var(--card);
+      border:1px solid rgba(15,23,42,0.06);
+      padding:8px 12px;
+      border-radius:10px;
+      cursor:pointer;
+      box-shadow:0 4px 10px rgba(2,6,23,0.04);
+      font-weight:600;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:18px;
+      margin-top:22px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:14px;
+      box-shadow:0 10px 30px rgba(2,6,23,0.04);
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .thumb{
+      width:96px;
+      height:128px;
+      border-radius:8px;
+      background:linear-gradient(180deg,#e9eefc,#f3f6ff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#9aa7d7;
+      font-size:12px;
+      flex-shrink:0;
+      overflow:hidden;
+    }
+    .meta{
+      flex:1;
+    }
+    .meta h2{
+      margin:0 0 6px 0;
+      font-size:16px;
+    }
+    .meta .studio{
+      font-size:13px;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+    .specs{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:8px;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .bg{
+      font-size:14px;
+      line-height:1.45;
+      color:#111827;
+    }
+
+    footer{
+      margin-top:28px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+
+    
+    @media print{
+      body{background:white;padding:18px}
+      .controls, .logo { display:none; }
+      .card{box-shadow:none;border:1px solid #eee}
+    }
+
+    
+    @media (max-width:420px){
+      .thumb{display:none}
+      header{gap:10px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">ANIME</div>
+      <div>
+        <h1>Curated Anime List</h1>
+        <p class="lead">Information pulled from your uploaded file (DOC-20250919-WA0001).</p>
+        <div class="controls">
+          <button onclick="window.print()">Save / Print as PDF</button>
+          <button onclick="downloadHTML()">Download HTML</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid" id="animeGrid">
+     
+      <article class="card">
+        <div class="thumb">
+          <img src="solo leveling.jpg" alt="Solo Leveling" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="meta">
+          <h2>Solo Leveling</h2>
+          <div class="studio">Producer / Studio: A-1 Pictures</div>
+          <div class="specs">
+            <div><strong>Release:</strong> 2024–2025</div>
+            <div><strong>Episodes:</strong> S1: 12 eps; S2: 13 eps</div>
+            <div><strong>Rating:</strong> MAL ~8.3–8.8; IMDb ~8.7</div>
+          </div>
+          <div class="bg">Background: Sung Jin-woo, the weakest Hunter, gains the ability to level up and becomes humanity’s strongest while battling monsters from "Gates".</div>
+       
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb">
+          <img src="the apothecary diaries.jpg" alt="The Apothecary Diaries" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="meta">
+          <h2>The Apothecary Diaries</h2>
+          <div class="studio">Producer / Studio: Toho Animation Studio & OLM</div>
+          <div class="specs">
+            <div><strong>Release:</strong> 2023–2025</div>
+            <div><strong>Episodes:</strong> S1: 24 eps; S2: 24 eps</div>
+            <div><strong>Rating:</strong> MAL ~8.9; IMDb ~8.6</div>
+          </div>
+          <div class="bg">Background: Maomao, a servant in the imperial palace, uses her apothecary skills to solve mysteries involving poisons and medicine amid palace intrigue.</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb">
+          <img src="dan da dan.webp" alt="Dan Da Dan" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="meta">
+          <h2>Dan Da Dan</h2>
+          <div class="studio">Producer / Studio: Science SARU</div>
+          <div class="specs">
+            <div><strong>Release:</strong> 2024–2025</div>
+            <div><strong>Episodes:</strong> S1: 12 eps; S2 ongoing</div>
+            <div><strong>Rating:</strong> MAL ~8.2; IMDb ~8.0</div>
+          </div>
+          <div class="bg">Background: High schoolers Momo and Okarun encounter aliens and ghosts, gaining powers and facing strange battles mixing horror and comedy.</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb">
+          <img src="attack on titan.webp" alt="Attack on Titan" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="meta">
+          <h2>Attack on Titan: The Final Season</h2>
+          <div class="studio">Producer / Studio: MAPPA</div>
+          <div class="specs">
+            <div><strong>Release:</strong> 2020–2023</div>
+            <div><strong>Episodes:</strong> Final Season: 35 + 2 specials</div>
+            <div><strong>Rating:</strong> MAL ~9.0; IMDb ~9.1</div>
+          </div>
+          <div class="bg">Background: Eren Yeager’s story concludes with epic battles, political intrigue, and moral dilemmas as humanity confronts Titans and its own nature.</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb">
+          <img src="jujutsu kaisen.jpg" alt="Jujutsu Kaisen S2" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="meta">
+          <h2>Jujutsu Kaisen — Season 2</h2>
+          <div class="studio">Producer / Studio: MAPPA</div>
+          <div class="specs">
+            <div><strong>Release:</strong> 2023–2024</div>
+            <div><strong>Episodes:</strong> 26</div>
+            <div><strong>Rating:</strong> MAL ~8.8–9.0; IMDb ~8.6</div>
+          </div>
+          <div class="bg">Background: Covers Gojo & Geto’s past and the intense Shibuya Incident arc with large-scale battles and high stakes.</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb">
+          <img src="frieren.jpg" alt="Frieren: Beyond Journey's End" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="meta">
+          <h2>Frieren: Beyond Journey’s End</h2>
+          <div class="studio">Producer / Studio: Madhouse</div>
+          <div class="specs">
+            <div><strong>Release:</strong> 2023–2024 (S1); S2 in 2026</div>
+            <div><strong>Episodes:</strong> 28 (Season 1)</div>
+            <div><strong>Awards:</strong> Best Drama (Crunchyroll Anime Awards 2025)</div>
+          </div>
+          <div class="bg">Background: Elf mage Frieren reflects on her long life after defeating the Demon King with her companions. She embarks on a new journey with her apprentice, exploring themes of mortality and time.</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb">
+          <img src="chainsaw man.jpg" alt="Chainsaw Man (Reze Arc)" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="meta">
+          <h2>Chainsaw Man (TV + Movie: Reze Arc)</h2>
+          <div class="studio">Producer / Studio: MAPPA</div>
+          <div class="specs">
+            <div><strong>Release:</strong> 2022 (S1); Movie 2025</div>
+            <div><strong>Episodes:</strong> S1: 12 eps; Movie covers Bomb Girl / Reze Arc</div>
+            <div><strong>Rating:</strong> Critically acclaimed (~97% RT)</div>
+          </div>
+          <div class="bg">Background: Denji, fused with his devil-dog Pochita, becomes Chainsaw Man. The story explores violent devil battles, moral struggles, and Denji’s human desires. The movie adapts the Reze/Bomb Girl Arc.</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb">
+          <img src="cyberpunk.webp" alt="Cyberpunk: Edgerunners" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="meta">
+          <h2>Cyberpunk: Edgerunners</h2>
+          <div class="studio">Producer / Studio: Studio Trigger & CD Projekt</div>
+          <div class="specs">
+            <div><strong>Release:</strong> 2022</div>
+            <div><strong>Episodes:</strong> 10</div>
+            <div><strong>Rating:</strong> MAL ~8.7; IMDb ~8.3</div>
+          </div>
+          <div class="bg">Background: Set in the Cyberpunk 2077 universe, follows David Martinez, a street kid trying to survive in a technology-obsessed city by becoming an 'edgerunner'.</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb">
+          <img src="one piece.jpg" alt="One Piece (Egghead Arc)" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="meta">
+          <h2>One Piece (Egghead Arc)</h2>
+          <div class="studio">Producer / Studio: Toei Animation</div>
+          <div class="specs">
+            <div><strong>Release:</strong> 2023–2025 (Arc ongoing)</div>
+            <div><strong>Episodes:</strong> Part of One Piece’s &gt;1000 eps</div>
+            <div><strong>Rating:</strong> MAL ~8.6 overall; IMDb ~8.9</div>
+          </div>
+          <div class="bg">Background: Egghead Arc introduces Dr. Vegapunk and futuristic technology, while the Straw Hats uncover mysteries of the world.</div>
+         
+
+
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb">
+          <img src="blue lock.jpg" alt="Blue Lock" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="meta">
+          <h2>Blue Lock</h2>
+          <div class="studio">Producer / Studio: 8bit</div>
+          <div class="specs">
+            <div><strong>Release:</strong> 2022–2023 (S1); S2 in 2024–2025</div>
+            <div><strong>Episodes:</strong> S1: 24 eps</div>
+            <div><strong>Rating:</strong> MAL ~8.2; IMDb ~8.3</div>
+          </div>
+          <div class="bg">Background: A radical football training program pits strikers against each other to create the ultimate forward for Japan’s national team.</div>
+        </div>
+      </article>
+
+    </main>
+
+    <footer>
+      <!-- <div>Content converted from your uploaded file — DOC-20250919-WA0001. 1</div>
+      <div style="margin-top:6px;font-size:12px;color:var(--muted)">Tip: Add real cover images into the <code>images/</code> folder or update the <code>img src</code> URLs above.</div> -->
+       <div class="social_media">
+        <ul>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+             <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+               <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </ul>
+      </div> 
+    </footer>
+  </div>
+
+  <script>
+    function downloadHTML(){
+      const content = document.documentElement.outerHTML;
+      const blob = new Blob([content], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'anime-list.html';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+
+</body>
+</html>
