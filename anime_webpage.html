@@ -171,7 +171,7 @@
             <div><strong>Rating:</strong> MAL ~8.3–8.8; IMDb ~8.7</div>
           </div>
           <div class="bg">Background: Sung Jin-woo, the weakest Hunter, gains the ability to level up and becomes humanity’s strongest while battling monsters from "Gates".</div>
-       
+        <button style="background-color:#658DA6;"><a href="solo_levelling.html" alt="details" target="_blank" style="border-radius: 20px; background-color:#658DA6;">click here for more details</a></button>
         </div>
       </article>
 
@@ -188,6 +188,7 @@
             <div><strong>Rating:</strong> MAL ~8.9; IMDb ~8.6</div>
           </div>
           <div class="bg">Background: Maomao, a servant in the imperial palace, uses her apothecary skills to solve mysteries involving poisons and medicine amid palace intrigue.</div>
+           <button style="background-color:#658DA6;"><a href="the apo.html" alt="details" target="_blank" style="border-radius: 20px; background-color:#658DA6;">click here for more details</a></button>
         </div>
       </article>
 
@@ -204,6 +205,7 @@
             <div><strong>Rating:</strong> MAL ~8.2; IMDb ~8.0</div>
           </div>
           <div class="bg">Background: High schoolers Momo and Okarun encounter aliens and ghosts, gaining powers and facing strange battles mixing horror and comedy.</div>
+          <button style="background-color:#658DA6;"><a href="dan da.html" alt="details" target="_blank" style="border-radius: 20px; background-color:#658DA6;">click here for more details</a></button>
         </div>
       </article>
 
@@ -220,6 +222,7 @@
             <div><strong>Rating:</strong> MAL ~9.0; IMDb ~9.1</div>
           </div>
           <div class="bg">Background: Eren Yeager’s story concludes with epic battles, political intrigue, and moral dilemmas as humanity confronts Titans and its own nature.</div>
+           <button style="background-color:#658DA6;"><a href="attack on titan.html" alt="details" target="_blank" style="border-radius: 20px; background-color:#658DA6;">click here for more details</a></button>
         </div>
       </article>
 
@@ -236,6 +239,7 @@
             <div><strong>Rating:</strong> MAL ~8.8–9.0; IMDb ~8.6</div>
           </div>
           <div class="bg">Background: Covers Gojo & Geto’s past and the intense Shibuya Incident arc with large-scale battles and high stakes.</div>
+            <button style="background-color:#658DA6;"><a href="jujutsu.html" alt="details" target="_blank" style="border-radius: 20px; background-color:#658DA6;">click here for more details</a></button>
         </div>
       </article>
 
@@ -252,6 +256,7 @@
             <div><strong>Awards:</strong> Best Drama (Crunchyroll Anime Awards 2025)</div>
           </div>
           <div class="bg">Background: Elf mage Frieren reflects on her long life after defeating the Demon King with her companions. She embarks on a new journey with her apprentice, exploring themes of mortality and time.</div>
+          <button style="background-color:#658DA6;"><a href="freieren.html" alt="details" target="_blank" style="border-radius: 20px; background-color:#658DA6;">click here for more details</a></button>
         </div>
       </article>
 
@@ -268,6 +273,7 @@
             <div><strong>Rating:</strong> Critically acclaimed (~97% RT)</div>
           </div>
           <div class="bg">Background: Denji, fused with his devil-dog Pochita, becomes Chainsaw Man. The story explores violent devil battles, moral struggles, and Denji’s human desires. The movie adapts the Reze/Bomb Girl Arc.</div>
+           <button style="background-color:#658DA6;"><a href="chainsaw.html" alt="details" target="_blank" style="border-radius: 20px; background-color:#658DA6;">click here for more details</a></button>
         </div>
       </article>
 
@@ -284,6 +290,7 @@
             <div><strong>Rating:</strong> MAL ~8.7; IMDb ~8.3</div>
           </div>
           <div class="bg">Background: Set in the Cyberpunk 2077 universe, follows David Martinez, a street kid trying to survive in a technology-obsessed city by becoming an 'edgerunner'.</div>
+           <button style="background-color:#2D4B73;"><a href="cyberpunk.html" alt="details" target="_blank" style="border-radius: 20px; background-color:#2D4B73;color: #2563eb;">click here for more details</a></button>
         </div>
       </article>
 
@@ -300,10 +307,8 @@
             <div><strong>Rating:</strong> MAL ~8.6 overall; IMDb ~8.9</div>
           </div>
           <div class="bg">Background: Egghead Arc introduces Dr. Vegapunk and futuristic technology, while the Straw Hats uncover mysteries of the world.</div>
-         
-
-
-        </div>
+         <button style="background-color:#658DA6;"><a href="one piece.html" alt="details" target="_blank" style="border-radius: 20px; background-color:#658DA6;">click here for more details</a></button>
+         </div>
       </article>
 
       <article class="card">
@@ -319,6 +324,7 @@
             <div><strong>Rating:</strong> MAL ~8.2; IMDb ~8.3</div>
           </div>
           <div class="bg">Background: A radical football training program pits strikers against each other to create the ultimate forward for Japan’s national team.</div>
+       <button style="background-color:#658DA6;"><a href="blue lock.html" alt="details" target="_blank" style="border-radius: 20px; background-color:#658DA6;">click here for more details</a></button>
         </div>
       </article>
 
@@ -350,6 +356,14 @@
       a.click();
       a.remove();
       URL.revokeObjectURL(url);
+      let p=fetch("https://api.jikan.moe/v4/anime ")
+      p.then((value1)=>{
+         console.log(value1.status)
+          console.log(value1.status)
+          return value1.json()
+   }).then((value2) =>{
+    console.log(value2)
+   })
     }
   </script>
 
